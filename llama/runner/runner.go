@@ -150,6 +150,8 @@ func (s *Server) run(ctx context.Context) {
 			}
 			s.mu.Unlock()
 
+			decode := false
+
 			for i, seq := range s.seqs {
 				if seq == nil {
 					continue
@@ -179,9 +181,14 @@ func (s *Server) run(ctx context.Context) {
 					batch.Add(t, seq.nPast, []int{i}, numTokensProcessed+1 == len(seq.tokens))
 					seq.nPast++
 					numTokensProcessed++
+					decode = true
 				}
 				seq.tokens = seq.tokens[numTokensProcessed:]
 				seq.iBatch = batch.NumTokens() - 1
+			}
+
+			if !decode {
+				continue
 			}
 
 			err := s.lc.Decode(batch)
