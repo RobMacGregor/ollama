@@ -47,9 +47,9 @@ Ollama supports a list of models available on [ollama.com/library](https://ollam
 
 Here are some example models that can be downloaded:
 
-| Model              | Parameters | Size  | Download                       |
-| ------------------ | ---------- | ----- | ------------------------------ |
-| Llama 3.1          | 8B         | 4.7GB | `ollama run llama3.1`          |
+| Model              | Parameters | Size  | Download                                      |
+| ------------------ | ---------- | ----- | ------------------------------                |
+| Llama 3.1          | 8B         | 4.7GB | `ollama run llama3.1`                         |
 | Llama 3.1          | 70B        | 40GB  | `ollama run llama3.1:70b`      |
 | Llama 3.1          | 405B       | 231GB | `ollama run llama3.1:405b`     |
 | Phi 3 Mini         | 3.8B       | 2.3GB | `ollama run phi3`              |
